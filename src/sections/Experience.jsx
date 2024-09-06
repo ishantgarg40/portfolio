@@ -48,12 +48,30 @@ const WorkExperience = () => {
                   <div className="sm:p-5 px-2.5 py-5">
                     <p className="font-bold text-white-800">{item.name}</p>
                     <p className="text-sm mb-5">
-                      {item.pos} -- <span>{item.duration}</span>
+                      {item.pos} (<span>{item.duration}</span>)
                     </p>
-                    <p className="group-hover:text-white transition-all ease-in-out duration-500">{item.title}</p>
+                    <ul>
+                      {item.achievements.map((text, idx) => (
+                        <li key={idx}>
+                          <p className="group-hover:text-white transition-all ease-in-out duration-500">{text}</p>
+                          <br />
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                 </div>
               ))}
+              <button
+                type="button"
+                class="text-white bg-gradient-to-br from-green-400 to-blue-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
+                onClick={() =>
+                  window.open(
+                    'https://drive.google.com/file/d/15Yy0cNpSi1uXr1IUjDI63SRaxhyXxTbX/view?usp=sharing',
+                    '_blank',
+                  )
+                }>
+                Link to my resume!
+              </button>
             </div>
           </div>
         </div>
